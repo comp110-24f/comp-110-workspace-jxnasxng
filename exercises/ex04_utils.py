@@ -4,14 +4,18 @@ __author__ = "730771663"
 def all(list: list[int], num: int) -> bool:
     index: int = 0
     matches: int = 0
+    if len(list) == 0:
+        return False
     while index < len(list):
         if list[index] == num:
             matches += 1
             index += 1
         else:
-            return False
-    if matches == 3:
+            index += 1
+    if matches == len(list):
         return True
+    else:
+        return False
 
 
 def max(input: list[int]) -> int:
@@ -31,13 +35,13 @@ def max(input: list[int]) -> int:
 def is_equal(list_1: list[int], list_2: list[int]) -> bool:
     index: int = 0
     matches: int = 0
-    while index < (len(list_1) and len(list_2)):
+    while index < (len(list_1) or len(list_2)):
         if list_1[index] == list_2[index]:
             matches += 1
             index += 1
         else:
             index += 1
-    if matches == (len(list_1) and len(list_2)):
+    if matches == (len(list_1) or len(list_2)):
         return True
     else:
         return False
