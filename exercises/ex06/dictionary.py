@@ -34,7 +34,7 @@ def count(input: list[str]) -> dict[str, int]:
         if input[x] in nums:
             nums[input[x]] += 1
         else:
-            nums[input[x]]
+            nums[input[x]] = 1
     return nums
 
 
@@ -57,5 +57,5 @@ def update_attendance(
     if day in attendance_dict:
         if student not in attendance_dict[day]:
             attendance_dict[day].append(student)
-        else:
-            attendance_dict[day] = [student]
+    else:
+        attendance_dict[day] = [student]
